@@ -7,12 +7,8 @@ import { WhatsAppIcon } from "@/components/BrandIcons";
 import { SITE } from "@/lib/site";
 import { useLang } from "@/components/LanguageProvider";
 
-const stats = [
-  { value: "100%", label: "Articles authentiques" },
-  { value: "6", label: "Étapes de suivi" },
-  { value: "FR · BE", label: "Achats en Europe" },
-  { value: "WhatsApp", label: "Devis & support direct" },
-];
+const statKeys = ["hero.stat1.label", "hero.stat2.label", "hero.stat3.label", "hero.stat4.label"];
+const statValues = ["100%", "6", "FR · BE", "WhatsApp"];
 
 export function Hero() {
   const { t } = useLang();
@@ -41,8 +37,8 @@ export function Hero() {
                   <Plane className="size-5" />
                 </div>
                 <div>
-                  <p className="font-display text-sm font-semibold">Europe → RDC</p>
-                  <p className="text-xs text-fg-inverse-muted">Fret aérien express</p>
+                  <p className="font-display text-sm font-semibold">{t("hero.card.title")}</p>
+                  <p className="text-xs text-fg-inverse-muted">{t("hero.card.sub")}</p>
                 </div>
               </div>
               <div className="mt-5 space-y-3">
@@ -57,7 +53,7 @@ export function Hero() {
                 ))}
               </div>
               <div className="mt-5 rounded-2xl bg-white/5 px-4 py-3">
-                <p className="font-mono text-[11px] tracking-wider text-fg-inverse-muted">CODE SUIVI</p>
+                <p className="font-mono text-[11px] tracking-wider text-fg-inverse-muted">{t("hero.card.code")}</p>
                 <p className="mt-1 font-mono text-sm font-medium text-accent">ADH-XXXXX</p>
               </div>
             </div>
@@ -103,10 +99,10 @@ export function Hero() {
         </div>
 
         <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-line-inverse bg-line-inverse md:mt-20 md:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label} className="bg-bg-inverse/80 px-5 py-6 backdrop-blur sm:px-6">
-              <p className="font-display text-2xl font-bold tracking-tight text-fg-inverse sm:text-3xl">{stat.value}</p>
-              <p className="mt-1 text-xs leading-relaxed text-fg-inverse-muted sm:text-sm">{stat.label}</p>
+          {statKeys.map((k, i) => (
+            <div key={k} className="bg-bg-inverse/80 px-5 py-6 backdrop-blur sm:px-6">
+              <p className="font-display text-2xl font-bold tracking-tight text-fg-inverse sm:text-3xl">{statValues[i]}</p>
+              <p className="mt-1 text-xs leading-relaxed text-fg-inverse-muted sm:text-sm">{t(k)}</p>
             </div>
           ))}
         </div>
