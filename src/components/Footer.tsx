@@ -1,0 +1,99 @@
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { SITE } from "@/lib/site";
+import { WhatsAppIcon } from "@/components/BrandIcons";
+
+const footerLinks = [
+  {
+    title: "Navigation",
+    links: [
+      { label: "Services", href: "/#services" },
+      { label: "Processus", href: "/#processus" },
+      { label: "Suivi de colis", href: "/suivi" },
+      { label: "FAQ", href: "/faq" },
+    ],
+  },
+  {
+    title: "Légal",
+    links: [
+      { label: "CGV / CGS", href: "/cgv" },
+      { label: "Commandes & retours", href: "/commandes-retours" },
+    ],
+  },
+];
+
+export function Footer() {
+  return (
+    <footer className="relative bg-bg-inverse text-fg-inverse pt-20 pb-8 overflow-hidden">
+      <div className="absolute inset-0 grid-fade opacity-40" aria-hidden="true" />
+      <div className="container-shell relative">
+        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:gap-8">
+          <div className="max-w-sm">
+            <Link href="/" className="font-display text-3xl font-extrabold tracking-tight">
+              Adhilix<span className="text-accent">.</span>
+            </Link>
+            <p className="mt-5 text-sm leading-relaxed text-fg-inverse-muted">
+              Personal shopping en Europe et fret aérien vers la RDC. Nous achetons,
+              contrôlons et expédions vos articles avec un suivi transparent jusqu&apos;à Kinshasa.
+            </p>
+            <a
+              href={SITE.whatsappLink("Bonjour Adhilix, je souhaite passer une commande.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-ink transition hover:bg-accent-strong"
+            >
+              <WhatsAppIcon className="size-4" />
+              Discuter sur WhatsApp
+            </a>
+          </div>
+
+          {footerLinks.map((group) => (
+            <div key={group.title}>
+              <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-fg-inverse-muted">
+                {group.title}
+              </p>
+              <ul className="mt-5 space-y-3">
+                {group.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-fg-inverse/85 transition hover:text-accent"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          <div>
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-fg-inverse-muted">
+              Contact
+            </p>
+            <ul className="mt-5 space-y-3 text-sm text-fg-inverse/85">
+              <li>
+                <a
+                  href={SITE.whatsappLink("Bonjour Adhilix, j'ai une question.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 transition hover:text-accent"
+                >
+                  WhatsApp <ArrowUpRight className="size-3.5" />
+                </a>
+              </li>
+              <li>{SITE.whatsappNumber}</li>
+              <li>{SITE.location}</li>
+              <li className="text-fg-inverse-muted">Entrepôts : {SITE.warehouses}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-16 flex flex-col gap-4 border-t border-line-inverse pt-6 text-xs text-fg-inverse-muted md:flex-row md:items-center md:justify-between">
+          <p>© 2026 Adhilix. Tous droits réservés.</p>
+          <p>Achat sur commande Europe · Expédition vers la RDC</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
