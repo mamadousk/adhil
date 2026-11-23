@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { SITE } from "@/lib/site";
@@ -7,6 +8,7 @@ const footerLinks = [
   {
     title: "Navigation",
     links: [
+      { label: "Boutique", href: "/boutique" },
       { label: "Services", href: "/#services" },
       { label: "Processus", href: "/#processus" },
       { label: "Suivi de colis", href: "/suivi" },
@@ -29,8 +31,14 @@ export function Footer() {
       <div className="container-shell relative">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:gap-8">
           <div className="max-w-sm">
-            <Link href="/" className="font-display text-3xl font-extrabold tracking-tight">
-              Adhilix<span className="text-accent">.</span>
+            <Link href="/" className="inline-flex items-center">
+              <Image
+                src="/images/logo.png"
+                alt="Adhilix"
+                width={852}
+                height={219}
+                className="h-11 w-auto"
+              />
             </Link>
             <p className="mt-5 text-sm leading-relaxed text-fg-inverse-muted">
               Personal shopping en Europe et fret aérien vers la RDC. Nous achetons,

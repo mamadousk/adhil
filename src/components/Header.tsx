@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -44,10 +45,17 @@ export function Header() {
         <div className="container-shell flex h-18 items-center justify-between gap-4 md:h-20">
           <Link
             href="/"
-            className="relative z-10 font-display text-[1.7rem] font-extrabold tracking-tight text-fg-inverse"
+            className="relative z-10 inline-flex items-center"
             aria-label="Adhilix, accueil"
           >
-            Adhilix<span className="text-accent">.</span>
+            <Image
+              src="/images/logo.png"
+              alt="Adhilix"
+              width={852}
+              height={219}
+              priority
+              className="h-10 w-auto md:h-11"
+            />
           </Link>
 
           <nav className="hidden items-center gap-1 md:flex" aria-label="Navigation principale">
