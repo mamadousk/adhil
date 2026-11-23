@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { WhatsAppIcon } from "@/components/BrandIcons";
@@ -9,6 +10,7 @@ import { useLang } from "@/components/LanguageProvider";
 
 export function Footer() {
   const { t } = useLang();
+  const pathname = usePathname();
   const footerLinks = [
     {
       title: t("footer.nav"),
@@ -36,7 +38,16 @@ export function Footer() {
       <div className="container-shell relative">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:gap-8">
           <div className="max-w-sm">
-            <Link href="/" className="inline-flex items-center">
+            <Link
+              href="/"
+              className="inline-flex items-center"
+              onClick={(e) => {
+                if (pathname === "/") {
+                  e.preventDefault();
+                  window.location.reload();
+                }
+              }}
+            >
               <Image src="/images/logo.png" alt="Adhilix" width={2080} height={550} className="h-11 w-auto" />
             </Link>
             <p className="mt-5 text-sm leading-relaxed text-fg-inverse-muted">{t("footer.desc")}</p>
