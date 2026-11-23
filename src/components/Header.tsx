@@ -70,28 +70,28 @@ export function Header() {
           scrolled || open ? "bg-bg-inverse/88 backdrop-blur-xl border-b border-line-inverse" : "bg-transparent"
         }`}
       >
-        <div className="container-shell flex h-18 items-center justify-between gap-3 md:h-20">
+        <div className="container-shell flex h-18 items-center justify-between gap-3 lg:h-20">
           <Link href="/" className="relative z-10 inline-flex items-center shrink-0" aria-label="Adhilix, accueil">
-            <Image src="/images/logo.png" alt="Adhilix" width={852} height={219} priority className="h-10 w-auto md:h-11" />
+            <Image src="/images/logo.png" alt="Adhilix" width={852} height={219} priority className="h-9 w-auto sm:h-10 lg:h-11" />
           </Link>
 
-          <nav className="hidden items-center gap-1 rounded-full border border-line-inverse bg-white/[0.04] p-1.5 backdrop-blur-md md:flex" aria-label="Navigation principale">
+          <nav className="hidden items-center gap-0.5 rounded-full border border-line-inverse bg-white/[0.04] p-1 backdrop-blur-md xl:flex" aria-label="Navigation principale">
             {NAV.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-full px-4 py-2 text-sm font-medium text-fg-inverse-muted transition hover:text-fg-inverse hover:bg-white/[0.06]"
+                className="rounded-full px-3.5 py-2 text-[13px] font-medium text-fg-inverse-muted transition hover:text-fg-inverse hover:bg-white/[0.06] whitespace-nowrap"
               >
                 {t(link.key)}
               </Link>
             ))}
           </nav>
 
-          <div className="hidden items-center gap-2 md:flex">
+          <div className="hidden items-center gap-2 xl:flex">
             <LangToggle />
             <Link
               href="/suivi"
-              className="inline-flex items-center gap-2 rounded-full border border-line-inverse px-4 py-2.5 text-sm font-semibold text-fg-inverse transition hover:bg-white/5"
+              className="inline-flex items-center gap-2 rounded-full border border-line-inverse px-4 py-2.5 text-sm font-semibold text-fg-inverse transition hover:bg-white/5 whitespace-nowrap"
             >
               {t("nav.track")}
               <ArrowUpRight className="size-4" />
@@ -100,14 +100,14 @@ export function Header() {
               href={SITE.whatsappLink("Bonjour Adhilix, je souhaite passer une commande.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2.5 text-sm font-semibold text-accent-ink transition hover:bg-accent-strong"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2.5 text-sm font-semibold text-accent-ink transition hover:bg-accent-strong whitespace-nowrap"
             >
               <WhatsAppIcon className="size-4" />
               {t("nav.whatsapp")}
             </a>
           </div>
 
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 xl:hidden">
             <LangToggle />
             <button
               type="button"
@@ -122,8 +122,8 @@ export function Header() {
         </div>
       </header>
 
-      <div className={`fixed inset-0 z-40 bg-bg-inverse transition-opacity duration-300 md:hidden ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
-        <div className="container-shell flex h-full flex-col pt-28 pb-10">
+      <div className={`fixed inset-0 z-40 bg-bg-inverse transition-opacity duration-300 xl:hidden ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
+        <div className="container-shell flex h-full flex-col pt-28 pb-10 overflow-y-auto">
           <nav className="flex flex-col gap-2" aria-label="Navigation mobile">
             {NAV.map((link) => (
               <Link key={link.href} href={link.href} className="rounded-2xl px-4 py-4 font-display text-2xl font-semibold text-fg-inverse transition hover:bg-white/5">
@@ -131,7 +131,7 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <div className="mt-auto flex flex-col gap-3">
+          <div className="mt-auto flex flex-col gap-3 pt-8">
             <Link href="/suivi" className="inline-flex items-center justify-center gap-2 rounded-full border border-line-inverse px-5 py-4 text-sm font-semibold text-fg-inverse">
               {t("nav.track")}
               <ArrowUpRight className="size-4" />

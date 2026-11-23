@@ -7,29 +7,29 @@ import { SITE } from "@/lib/site";
 import { WhatsAppIcon } from "@/components/BrandIcons";
 import { useLang } from "@/components/LanguageProvider";
 
-const footerLinks = [
-  {
-    title: "Navigation",
-    links: [
-      { label: "Boutique", href: "/boutique" },
-      { label: "Services", href: "/#services" },
-      { label: "Processus", href: "/#processus" },
-      { label: "Suivi de colis", href: "/suivi" },
-      { label: "FAQ", href: "/faq" },
-      { label: "Contact", href: "/contact" },
-    ],
-  },
-  {
-    title: "Légal",
-    links: [
-      { label: "CGV / CGS", href: "/cgv" },
-      { label: "Commandes & retours", href: "/commandes-retours" },
-    ],
-  },
-];
-
 export function Footer() {
   const { t } = useLang();
+  const footerLinks = [
+    {
+      title: t("footer.nav"),
+      links: [
+        { label: t("nav.boutique"), href: "/boutique" },
+        { label: t("nav.services"), href: "/#services" },
+        { label: t("nav.process"), href: "/#processus" },
+        { label: t("nav.tracking"), href: "/suivi" },
+        { label: "FAQ", href: "/faq" },
+        { label: t("nav.contact"), href: "/contact" },
+      ],
+    },
+    {
+      title: t("footer.legal"),
+      links: [
+        { label: "CGV / CGS", href: "/cgv" },
+        { label: t("cta.returns"), href: "/commandes-retours" },
+      ],
+    },
+  ];
+
   return (
     <footer className="relative bg-bg-inverse text-fg-inverse pt-20 pb-8 overflow-hidden">
       <div className="absolute inset-0 grid-fade opacity-40" aria-hidden="true" />
@@ -39,16 +39,8 @@ export function Footer() {
             <Link href="/" className="inline-flex items-center">
               <Image src="/images/logo.png" alt="Adhilix" width={852} height={219} className="h-11 w-auto" />
             </Link>
-            <p className="mt-5 text-sm leading-relaxed text-fg-inverse-muted">
-              Personal shopping en Europe et fret aérien vers la RDC. Nous achetons,
-              contrôlons et expédions vos articles avec un suivi transparent jusqu&apos;à Kinshasa.
-            </p>
-            <a
-              href={SITE.whatsappLink("Bonjour Adhilix, je souhaite passer une commande.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-ink transition hover:bg-accent-strong"
-            >
+            <p className="mt-5 text-sm leading-relaxed text-fg-inverse-muted">{t("footer.desc")}</p>
+            <a href={SITE.whatsappLink("Bonjour Adhilix, je souhaite passer une commande.")} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-ink transition hover:bg-accent-strong">
               <WhatsAppIcon className="size-4" />
               {t("nav.whatsappLong")}
             </a>
@@ -68,16 +60,17 @@ export function Footer() {
           ))}
 
           <div>
-            <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-fg-inverse-muted">Contact</p>
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-fg-inverse-muted">{t("footer.contact")}</p>
             <ul className="mt-5 space-y-3 text-sm text-fg-inverse/85">
               <li>
                 <a href={SITE.whatsappLink("Bonjour Adhilix, j'ai une question.")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition hover:text-accent">
                   WhatsApp <ArrowUpRight className="size-3.5" />
                 </a>
               </li>
+              <li><a href="mailto:hello@adhilix.com" className="transition hover:text-accent">hello@adhilix.com</a></li>
               <li>{SITE.whatsappNumber}</li>
               <li>{SITE.location}</li>
-              <li className="text-fg-inverse-muted">Entrepôts : {SITE.warehouses}</li>
+              <li className="text-fg-inverse-muted">{t("footer.warehouses")} {SITE.warehouses}</li>
             </ul>
           </div>
         </div>
