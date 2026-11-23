@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { WhatsAppIcon } from "@/components/BrandIcons";
@@ -10,7 +9,6 @@ import { useLang } from "@/components/LanguageProvider";
 
 export function Footer() {
   const { t } = useLang();
-  const pathname = usePathname();
   const footerLinks = [
     {
       title: t("footer.nav"),
@@ -42,10 +40,10 @@ export function Footer() {
               href="/"
               className="inline-flex items-center"
               onClick={(e) => {
-                if (pathname === "/") {
-                  e.preventDefault();
-                  window.location.reload();
-                }
+                e.preventDefault();
+                window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+                // eslint-disable-next-line @next/next/no-location-assign-relative-destination -- intentional full reload to home
+                window.location.href = `${window.location.origin}/`;
               }}
             >
               <Image src="/images/logo.png" alt="Adhilix" width={2080} height={550} className="h-11 w-auto" />

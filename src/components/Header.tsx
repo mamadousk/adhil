@@ -64,10 +64,10 @@ export function Header() {
             className="inline-flex shrink-0 items-center pl-1"
             aria-label="Adhilix, accueil"
             onClick={(e) => {
-              if (pathname === "/") {
-                e.preventDefault();
-                window.location.reload();
-              }
+              e.preventDefault();
+              window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+              // eslint-disable-next-line @next/next/no-location-assign-relative-destination -- intentional full reload to home
+              window.location.href = `${window.location.origin}/`;
             }}
           >
             <Image src="/images/logo.png" alt="Adhilix" width={2080} height={550} priority className="h-8 w-auto sm:h-9" />
