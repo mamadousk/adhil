@@ -37,7 +37,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:gap-8">
           <div className="max-w-sm">
             <Link href="/" className="inline-flex items-center">
-              <Image src="/images/logo.png" alt="Adhilix" width={852} height={219} className="h-11 w-auto" />
+              <Image src="/images/logo.png" alt="Adhilix" width={2080} height={550} className="h-11 w-auto" />
             </Link>
             <p className="mt-5 text-sm leading-relaxed text-fg-inverse-muted">{t("footer.desc")}</p>
             <a href={SITE.whatsappLink("Bonjour Adhilix, je souhaite passer une commande.")} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-ink transition hover:bg-accent-strong">
