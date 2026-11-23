@@ -60,7 +60,7 @@ export function Header() {
       <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4">
         <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between gap-2 rounded-full border border-white/10 bg-bg-inverse/72 px-3 shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl sm:h-16 sm:px-4">
           <Link href="/" className="inline-flex shrink-0 items-center pl-1" aria-label="Adhilix, accueil">
-            <Image src="/images/logo.png" alt="Adhilix" width={852} height={219} priority className="h-8 w-auto sm:h-9" />
+            <Image src="/images/logo.png" alt="Adhilix" width={2080} height={550} priority className="h-8 w-auto sm:h-9" />
           </Link>
 
           <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Navigation principale">
