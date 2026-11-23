@@ -11,9 +11,9 @@
   --fg-inverse-muted: #b2b8b0;
   --line: rgba(23, 24, 22, 0.1);
   --line-inverse: rgba(245, 246, 242, 0.12);
-  --accent: #c8f55a;
-  --accent-strong: #a8de2f;
-  --accent-ink: #14180f;
+  --accent: #f28a45;
+  --accent-strong: #e0752e;
+  --accent-ink: #1a120b;
   --danger: #ff5c5c;
   --radius: 1.25rem;
 }

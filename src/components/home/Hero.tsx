@@ -38,7 +38,7 @@ export function Hero() {
       >
         <div className="relative size-[420px]">
           <div className="animate-orbit absolute inset-0 rounded-full border border-white/[0.07]">
-            <span className="absolute top-0 left-1/2 size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_20px_rgba(200,245,90,0.9)]" />
+            <span className="absolute top-0 left-1/2 size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_20px_rgba(242,138,69,0.9)]" />
           </div>
           <div className="animate-orbit-reverse absolute inset-12 rounded-full border border-white/[0.05]">
             <span className="absolute bottom-6 right-6 size-2 rounded-full bg-white/70" />
