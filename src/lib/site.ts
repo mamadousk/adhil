@@ -9,7 +9,7 @@ export const SITE = {
   whatsappE164: "243815828281",
   whatsappLink: (message: string) =>
     `https://wa.me/243815828281?text=${encodeURIComponent(message)}`,
-  email: "contact@adhilix.com",
+  email: "hello@adhilix.com",
   location: "Kinshasa, RDC",
   warehouses: "France · Belgique",
 } as const;
@@ -20,6 +20,7 @@ export const NAV_LINKS = [
   { href: "/#processus", label: "Processus" },
   { href: "/suivi", label: "Suivi" },
   { href: "/faq", label: "FAQ" },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
 export const SERVICES = [

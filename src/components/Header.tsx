@@ -15,6 +15,7 @@ const NAV = [
   { href: "/#processus", key: "nav.process" },
   { href: "/suivi", key: "nav.tracking" },
   { href: "/faq", key: "nav.faq" },
+  { href: "/contact", key: "nav.contact" },
 ] as const;
 
 function LangToggle({ className = "" }: { className?: string }) {
