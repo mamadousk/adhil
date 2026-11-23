@@ -49,3 +49,36 @@ export function StockXIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function VisaIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 48 16" fill="none" aria-hidden="true" {...props}>
+      <rect width="48" height="16" rx="2" fill="#1434CB" />
+      <path d="M17.1 10.86l1.33-6.72h2.12l-1.33 6.72H17.1zm9.76-6.56c-.42-.16-1.08-.34-1.9-.34-2.09 0-3.56 1.12-3.57 2.72-.02 1.18 1.05 1.84 1.85 2.23.82.4 1.1.66 1.1 1.02-.01.55-.66.8-1.27.8-.85 0-1.3-.13-1.99-.44l-.28-.13-.3 1.86c.5.23 1.42.43 2.37.44 2.22 0 3.66-1.1 3.68-2.81.01-.94-.56-1.66-1.78-2.24-.74-.38-1.19-.63-1.19-1.02.01-.35.39-.71 1.23-.71.7-.02 1.21.15 1.6.32l.19.09.29-1.79zM30.2 4.14h-1.64c-.51 0-.89.15-1.11.68l-3.14 7.04h2.22l.44-1.22h2.71c.06.29.26 1.22.26 1.22h1.96L30.2 4.14zm-2.61 4.33c.17-.47.84-2.28.84-2.28-.01.02.17-.48.28-.79l.14.7s.4 1.94.49 2.37h-1.75zM15.34 4.14l-2.07 5.56-.22-1.13c-.38-1.31-1.58-2.73-2.92-3.44l1.89 7.72h2.24l3.33-7.71h-2.25z" fill="#fff"/>
+      <path d="M11.36 4.14H7.96l-.03.17c2.65.68 4.4 2.32 5.13 4.29l-.74-3.77c-.13-.52-.5-.67-.96-.69z" fill="#F9A533"/>
+    </svg>
+  );
+}
+
+export function MastercardIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 48 32" fill="none" aria-hidden="true" {...props}>
+      <rect width="48" height="32" rx="4" fill="#252525" />
+      <circle cx="19" cy="16" r="9" fill="#EB001B" />
+      <circle cx="29" cy="16" r="9" fill="#F79E1B" />
+      <path d="M24 8.8a8.96 8.96 0 0 0-3 6.7c0 2.63 1.13 5 3 6.7a8.96 8.96 0 0 0 3-6.7 8.96 8.96 0 0 0-3-6.7z" fill="#FF5F00" />
+    </svg>
+  );
+}
+
+export function MobileMoneyIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 48 32" fill="none" aria-hidden="true" {...props}>
+      <rect width="48" height="32" rx="4" fill="#1A73E8" />
+      <path d="M14 9.5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2v-13z" stroke="#fff" strokeWidth="1.8"/>
+      <path d="M18.5 21.5h3" stroke="#fff" strokeWidth="1.8" strokeLinecap="round"/>
+      <circle cx="31.5" cy="18.5" r="5.5" fill="#34A853" stroke="#fff" strokeWidth="1.5"/>
+      <path d="M31.5 15.5v6M29 17.5h5" stroke="#fff" strokeWidth="1.6" strokeLinecap="round"/>
+    </svg>
+  );
+}
