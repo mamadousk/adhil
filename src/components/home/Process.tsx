@@ -1,22 +1,21 @@
+"use client";
+
 import { STEPS } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
+import { useLang } from "@/components/LanguageProvider";
 
 export function Process() {
+  const { t } = useLang();
   return (
     <section id="processus" className="relative overflow-hidden bg-bg-inverse py-24 text-fg-inverse md:py-32 scroll-mt-24">
       <div className="absolute inset-0 grid-fade opacity-30" aria-hidden="true" />
       <div className="container-shell relative">
         <Reveal>
           <div className="max-w-2xl">
-            <p className="font-mono text-xs font-medium tracking-[0.25em] text-fg-inverse-muted uppercase">
-              Le parcours de votre colis
-            </p>
-            <h2 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">
-              De la boutique européenne à votre porte.
-            </h2>
+            <p className="font-mono text-xs font-medium tracking-[0.25em] text-fg-inverse-muted uppercase">{t("section.process.kicker")}</p>
+            <h2 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">{t("section.process.title")}</h2>
             <p className="mt-5 text-base leading-relaxed text-fg-inverse-muted sm:text-lg">
-              Six étapes claires, visibles dans votre espace de suivi. Vous savez toujours
-              où en est votre commande.
+              Six étapes claires, visibles dans votre espace de suivi. Vous savez toujours où en est votre commande.
             </p>
           </div>
         </Reveal>
@@ -29,12 +28,8 @@ export function Process() {
                   <span className="font-mono text-sm font-medium text-accent">{step.number}</span>
                   <div className="h-px flex-1 bg-line-inverse transition group-hover:bg-accent/30" />
                 </div>
-                <h3 className="mt-5 font-display text-xl font-bold tracking-tight">
-                  {step.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-fg-inverse-muted">
-                  {step.description}
-                </p>
+                <h3 className="mt-5 font-display text-xl font-bold tracking-tight">{step.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-fg-inverse-muted">{step.description}</p>
               </div>
             </Reveal>
           ))}
