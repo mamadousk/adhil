@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { WhatsAppIcon } from "@/components/BrandIcons";
+import { useLang } from "@/components/LanguageProvider";
 
 const footerLinks = [
   {
@@ -25,6 +28,7 @@ const footerLinks = [
 ];
 
 export function Footer() {
+  const { t } = useLang();
   return (
     <footer className="relative bg-bg-inverse text-fg-inverse pt-20 pb-8 overflow-hidden">
       <div className="absolute inset-0 grid-fade opacity-40" aria-hidden="true" />
@@ -32,13 +36,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:gap-8">
           <div className="max-w-sm">
             <Link href="/" className="inline-flex items-center">
-              <Image
-                src="/images/logo.png"
-                alt="Adhilix"
-                width={852}
-                height={219}
-                className="h-11 w-auto"
-              />
+              <Image src="/images/logo.png" alt="Adhilix" width={852} height={219} className="h-11 w-auto" />
             </Link>
             <p className="mt-5 text-sm leading-relaxed text-fg-inverse-muted">
               Personal shopping en Europe et fret aérien vers la RDC. Nous achetons,
@@ -51,24 +49,17 @@ export function Footer() {
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-ink transition hover:bg-accent-strong"
             >
               <WhatsAppIcon className="size-4" />
-              Discuter sur WhatsApp
+              {t("nav.whatsappLong")}
             </a>
           </div>
 
           {footerLinks.map((group) => (
             <div key={group.title}>
-              <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-fg-inverse-muted">
-                {group.title}
-              </p>
+              <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-fg-inverse-muted">{group.title}</p>
               <ul className="mt-5 space-y-3">
                 {group.links.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-fg-inverse/85 transition hover:text-accent"
-                    >
-                      {link.label}
-                    </Link>
+                    <Link href={link.href} className="text-sm text-fg-inverse/85 transition hover:text-accent">{link.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -76,17 +67,10 @@ export function Footer() {
           ))}
 
           <div>
-            <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-fg-inverse-muted">
-              Contact
-            </p>
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-fg-inverse-muted">Contact</p>
             <ul className="mt-5 space-y-3 text-sm text-fg-inverse/85">
               <li>
-                <a
-                  href={SITE.whatsappLink("Bonjour Adhilix, j'ai une question.")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 transition hover:text-accent"
-                >
+                <a href={SITE.whatsappLink("Bonjour Adhilix, j'ai une question.")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition hover:text-accent">
                   WhatsApp <ArrowUpRight className="size-3.5" />
                 </a>
               </li>
@@ -98,8 +82,8 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col gap-4 border-t border-line-inverse pt-6 text-xs text-fg-inverse-muted md:flex-row md:items-center md:justify-between">
-          <p>© 2026 Adhilix. Tous droits réservés.</p>
-          <p>Achat sur commande Europe · Expédition vers la RDC</p>
+          <p>© 2026 Adhilix. {t("footer.rights")}</p>
+          <p>{t("footer.tagline")}</p>
         </div>
       </div>
     </footer>

@@ -14,6 +14,7 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { LanguageProvider } from "@/components/LanguageProvider";
 
 const siteUrl = "https://adhilix.com";
 
@@ -58,15 +59,33 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Adhilix",
+    url: siteUrl,
+    description: metadata.description,
+    telephone: "+243815828281",
+    areaServed: ["CD", "FR", "BE"],
+    address: { "@type": "PostalAddress", addressLocality: "Kinshasa", addressCountry: "CD" },
+    sameAs: ["https://wa.me/243815828281"],
+  };
+
   return (
     <html lang="fr" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-bg text-fg overflow-x-hidden">
-        <SmoothScroll>
-          <Header />
-          <div className="flex-1">{children}</div>
-          <Footer />
-          <FloatingWhatsApp />
-        </SmoothScroll>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <LanguageProvider>
+          <SmoothScroll>
+            <Header />
+            <div className="flex-1">{children}</div>
+            <Footer />
+            <FloatingWhatsApp />
+          </SmoothScroll>
+        </LanguageProvider>
       </body>
     </html>
   );
