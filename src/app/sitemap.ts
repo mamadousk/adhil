@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://adhilix.com";
-  const routes = ["", "/boutique", "/suivi", "/faq", "/cgv", "/commandes-retours"];
+  const routes = ["", "/boutique", "/suivi", "/faq", "/contact", "/cgv", "/commandes-retours"];
   const now = new Date();
   return routes.map((route) => ({
     url: `${base}${route}`,

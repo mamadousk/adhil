@@ -16,6 +16,7 @@ const footerLinks = [
       { label: "Processus", href: "/#processus" },
       { label: "Suivi de colis", href: "/suivi" },
       { label: "FAQ", href: "/faq" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
