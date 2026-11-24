@@ -98,7 +98,7 @@ export function TrackingForm() {
               <p className="font-mono text-xs tracking-[0.2em] text-fg-muted uppercase">{t("tracking.kicker")}</p>
               <p className="mt-1 font-mono text-2xl font-bold tracking-tight text-fg">{result.record.code}</p>
             </div>
-            <div className="inline-flex items-center gap-2 self-start rounded-full bg-accent/15 px-4 py-2 text-sm font-medium text-accent-strong">
+            <div className="inline-flex items-center gap-2 self-start rounded-full bg-accent/15 px-4 py-2 text-sm font-medium text-accent-text">
               <span className="size-2 rounded-full bg-accent-strong animate-pulse-soft" />
               {statusLabels[progress] || result.record.status}
             </div>
@@ -118,15 +118,15 @@ export function TrackingForm() {
               return (
                 <div key={status} className="flex gap-4">
                   <div className="flex flex-col items-center">
-                    <div className={`flex size-10 shrink-0 items-center justify-center rounded-full border ${done ? "border-accent/40 bg-accent/15 text-accent-strong" : "border-line bg-bg text-fg-muted/50"} ${current ? "ring-2 ring-accent/25" : ""}`}>
+                    <div className={`flex size-10 shrink-0 items-center justify-center rounded-full border ${done ? "border-accent/40 bg-accent/15 text-accent-text" : "border-line bg-bg text-fg-muted/50"} ${current ? "ring-2 ring-accent/25" : ""}`}>
                       <Icon className="size-4" />
                     </div>
                     {i < statusLabels.length - 1 && <div className={`my-1 w-px flex-1 min-h-8 ${done && !current ? "bg-accent/40" : "bg-line"}`} />}
                   </div>
                   <div className="pb-7 pt-1.5">
-                    <p className={`font-display text-sm font-semibold ${done ? "text-fg" : "text-fg-muted/60"}`}>
+                    <p className={`font-display text-sm font-semibold ${done ? "text-fg" : "text-fg-muted"}`}>
                       {status}
-                      {current && <span className="ml-2 text-xs font-medium text-accent-strong">{t("tracking.current")}</span>}
+                      {current && <span className="ml-2 text-xs font-medium text-accent-text">{t("tracking.current")}</span>}
                     </p>
                   </div>
                 </div>

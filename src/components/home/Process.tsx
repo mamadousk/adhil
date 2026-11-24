@@ -22,9 +22,9 @@ export function Process() {
         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {nums.map((n, i) => (
             <Reveal key={n} delay={i * 0.06}>
-              <div className="group relative h-full rounded-3xl border border-line-inverse bg-white/[0.02] p-6 transition duration-300 hover:bg-white/[0.04] hover:border-accent/30">
+              <div className="group relative h-full rounded-3xl border border-line-inverse bg-white/80 p-6 transition duration-300 hover:bg-white hover:border-accent/30">
                 <div className="flex items-center gap-4">
-                  <span className="font-mono text-sm font-medium text-accent">{n}</span>
+                  <span className="font-mono text-sm font-medium text-accent-text">{n}</span>
                   <div className="h-px flex-1 bg-line-inverse transition group-hover:bg-accent/30" />
                 </div>
                 <h3 className="mt-5 font-display text-xl font-bold tracking-tight">{t(`process.${i}.title`)}</h3>

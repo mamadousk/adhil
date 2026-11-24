@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f7f7f4;
+  --bg: #ffffff;
   --bg-elev: #ffffff;
-  --bg-inverse: #121412;
-  --bg-inverse-soft: #1b1e1b;
+  --bg-inverse: #fffaf6;
+  --bg-inverse-soft: #fff5ed;
   --fg: #171816;
   --fg-muted: #5d615c;
-  --fg-inverse: #f5f6f2;
-  --fg-inverse-muted: #b2b8b0;
+  --fg-inverse: #171816;
+  --fg-inverse-muted: #5d615c;
   --line: rgba(23, 24, 22, 0.1);
-  --line-inverse: rgba(245, 246, 242, 0.12);
+  --line-inverse: rgba(91, 63, 43, 0.16);
   --accent: #f28a45;
   --accent-strong: #e0752e;
   --accent-ink: #1a120b;
-  --danger: #ff5c5c;
+  --accent-text: #a8420d;
+  --danger: #b42318;
   --radius: 1.25rem;
 }
 
@@ -32,6 +33,7 @@
   --color-accent: var(--accent);
   --color-accent-strong: var(--accent-strong);
   --color-accent-ink: var(--accent-ink);
+  --color-accent-text: var(--accent-text);
   --color-danger: var(--danger);
   --font-sans: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -81,8 +83,8 @@
   }
 
   .glass {
-    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-    border: 1px solid rgba(255,255,255,0.1);
+    background: linear-gradient(150deg, rgba(255,255,255,0.98), rgba(255,248,242,0.95));
+    border: 1px solid rgba(183, 112, 64, 0.18);
     backdrop-filter: blur(16px);
   }
 
@@ -97,8 +99,8 @@
 
   .grid-fade {
     background-image:
-      linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+      linear-gradient(to right, rgba(178, 107, 61, 0.16) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(178, 107, 61, 0.16) 1px, transparent 1px);
     background-size: 56px 56px;
     mask-image: radial-gradient(ellipse 70% 70% at 50% 30%, #000 40%, transparent 100%);
   }

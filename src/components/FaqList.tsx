@@ -12,7 +12,7 @@ export function FaqList({ items }: { items: readonly FaqItem[] }) {
         <details key={item.question} className="group px-6 sm:px-8" open={i === 0}>
           <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 font-display text-base font-semibold tracking-tight text-fg sm:text-lg [&::-webkit-details-marker]:hidden">
             <span>{item.question}</span>
-            <span className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line text-fg-muted transition group-open:rotate-45 group-open:border-accent/40 group-open:text-accent-strong">
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line text-fg-muted transition group-open:rotate-45 group-open:border-accent/40 group-open:text-accent-text">
               <Plus className="size-4" />
             </span>
           </summary>

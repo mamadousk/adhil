@@ -31,7 +31,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative bg-bg-inverse text-fg-inverse pt-20 pb-8 overflow-hidden">
+    <footer className="relative border-t border-line-inverse bg-bg-inverse text-fg-inverse pt-20 pb-8 overflow-hidden">
       <div className="absolute inset-0 grid-fade opacity-40" aria-hidden="true" />
       <div className="container-shell relative">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:gap-8">
@@ -39,12 +39,6 @@ export function Footer() {
             <Link
               href="/"
               className="inline-flex items-center"
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
-                // eslint-disable-next-line @next/next/no-location-assign-relative-destination -- intentional full reload to home
-                window.location.href = `${window.location.origin}/`;
-              }}
             >
               <Image src="/images/logo.png" alt="Adhilix" width={2080} height={550} className="h-11 w-auto" />
             </Link>
@@ -61,7 +55,7 @@ export function Footer() {
               <ul className="mt-5 space-y-3">
                 {group.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-sm text-fg-inverse/85 transition hover:text-accent">{link.label}</Link>
+                    <Link href={link.href} className="text-sm text-fg-inverse/85 transition hover:text-accent-text">{link.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -72,11 +66,11 @@ export function Footer() {
             <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-fg-inverse-muted">{t("footer.contact")}</p>
             <ul className="mt-5 space-y-3 text-sm text-fg-inverse/85">
               <li>
-                <a href={SITE.whatsappLink("Bonjour Adhilix, j'ai une question.")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition hover:text-accent">
+                <a href={SITE.whatsappLink("Bonjour Adhilix, j'ai une question.")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition hover:text-accent-text">
                   WhatsApp <ArrowUpRight className="size-3.5" />
                 </a>
               </li>
-              <li><a href="mailto:hello@adhilix.com" className="transition hover:text-accent">hello@adhilix.com</a></li>
+              <li><a href="mailto:hello@adhilix.com" className="transition hover:text-accent-text">hello@adhilix.com</a></li>
               <li>{SITE.whatsappNumber}</li>
               <li>{SITE.location}</li>
               <li className="text-fg-inverse-muted">{t("footer.warehouses")} {SITE.warehouses}</li>

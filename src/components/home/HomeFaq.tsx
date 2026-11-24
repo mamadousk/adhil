@@ -33,7 +33,7 @@ export function HomeFaq() {
             <p className="font-mono text-xs font-medium tracking-[0.25em] text-fg-muted uppercase">{t("faq.kicker")}</p>
             <h2 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">{t("faq.title")}</h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-fg-muted sm:text-lg">{t("faq.desc")}</p>
-            <Link href="/faq" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-fg transition hover:text-accent-strong">
+            <Link href="/faq" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-fg transition hover:text-accent-text">
               {t("faq.all")}
               <ArrowRight className="size-4" />
             </Link>

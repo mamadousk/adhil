@@ -18,7 +18,7 @@ export function AdminLogin() {
   return (
     <div className="mx-auto max-w-md">
       <div className="rounded-3xl border border-line bg-bg-elev p-8">
-        <div className="flex size-12 items-center justify-center rounded-2xl bg-bg-inverse text-accent">
+        <div className="flex size-12 items-center justify-center rounded-2xl bg-accent/15 text-accent-text">
           <Lock className="size-5" />
         </div>
         <h1 className="mt-6 font-display text-3xl font-extrabold tracking-tight">Accès administration</h1>

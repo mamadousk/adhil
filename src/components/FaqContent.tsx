@@ -38,7 +38,7 @@ export function FaqContent() {
         <div className="mx-auto mt-12 max-w-3xl">
           <FaqList items={faqs} />
         </div>
-        <div className="mx-auto mt-12 max-w-3xl rounded-3xl bg-bg-inverse p-8 text-fg-inverse sm:p-10">
+        <div className="mx-auto mt-12 max-w-3xl rounded-3xl border border-line-inverse bg-bg-inverse p-8 text-fg-inverse sm:p-10">
           <h2 className="font-display text-2xl font-bold tracking-tight">{t("faq.moreTitle")}</h2>
           <p className="mt-3 text-sm leading-relaxed text-fg-inverse-muted">{t("faq.moreDesc")}</p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -46,7 +46,7 @@ export function FaqContent() {
               <WhatsAppIcon className="size-4" />
               {t("faq.moreCta")}
             </a>
-            <Link href="/suivi" className="inline-flex items-center justify-center rounded-full border border-line-inverse px-6 py-3.5 text-sm font-semibold text-fg-inverse transition hover:bg-white/5">
+            <Link href="/suivi" className="inline-flex items-center justify-center rounded-full border border-line-inverse px-6 py-3.5 text-sm font-semibold text-fg-inverse transition hover:bg-accent/10">
               {t("nav.track")}
             </Link>
           </div>
