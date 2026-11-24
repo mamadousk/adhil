@@ -12,7 +12,7 @@ export function ContactForm() {
   if (state?.ok) {
     return (
       <div className="rounded-3xl border border-accent/30 bg-accent/10 p-8 text-center">
-        <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-accent/20 text-accent-strong">
+        <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-accent/20 text-accent-text">
           <CheckCircle2 className="size-7" />
         </div>
         <h3 className="mt-5 font-display text-2xl font-bold tracking-tight">{t("contact.form.sentTitle")}</h3>
@@ -49,7 +49,7 @@ export function ContactForm() {
 
       <p className="text-xs text-fg-muted text-center">
         {t("contact.form.direct")}{" "}
-        <a href="mailto:hello@adhilix.com" className="font-medium text-accent-strong underline decoration-accent/40 underline-offset-4">hello@adhilix.com</a>
+        <a href="mailto:hello@adhilix.com" className="font-medium text-accent-text underline decoration-accent/40 underline-offset-4">hello@adhilix.com</a>
       </p>
     </form>
   );

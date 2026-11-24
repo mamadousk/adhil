@@ -26,10 +26,10 @@ export function ContactContent() {
         <div className="mt-12 grid gap-4 sm:grid-cols-3">
           {cards.map(({ icon: Icon, title, value, href, note }) => (
             <div key={title} className="rounded-3xl border border-line bg-bg-elev p-6">
-              <div className="flex size-11 items-center justify-center rounded-2xl bg-accent/15 text-accent-strong"><Icon className="size-5" /></div>
+              <div className="flex size-11 items-center justify-center rounded-2xl bg-accent/15 text-accent-text"><Icon className="size-5" /></div>
               <p className="mt-4 font-display font-semibold">{title}</p>
               {href ? (
-                <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined} className="mt-1 block text-sm font-medium text-fg hover:text-accent-strong">{value}</a>
+                <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined} className="mt-1 block text-sm font-medium text-fg hover:text-accent-text">{value}</a>
               ) : (
                 <p className="mt-1 text-sm font-medium text-fg">{value}</p>
               )}
@@ -40,8 +40,8 @@ export function ContactContent() {
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_0.95fr]">
           <ContactForm />
-          <div className="rounded-3xl bg-bg-inverse p-8 text-fg-inverse sm:p-10">
-            <p className="font-mono text-xs tracking-[0.2em] text-accent uppercase">{t("contact.side.kicker")}</p>
+          <div className="rounded-3xl border border-line-inverse bg-bg-inverse p-8 text-fg-inverse sm:p-10">
+            <p className="font-mono text-xs tracking-[0.2em] text-accent-text uppercase">{t("contact.side.kicker")}</p>
             <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight">{t("contact.side.title")}</h2>
             <p className="mt-4 text-sm leading-relaxed text-fg-inverse-muted">{t("contact.side.desc")}</p>
             <a href={SITE.whatsappLink("Bonjour Adhilix, j'ai une question.")} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-accent-ink transition hover:bg-accent-strong">

@@ -10,7 +10,6 @@ import "@fontsource/inter/600.css";
 import "@fontsource/jetbrains-mono/400.css";
 import "@fontsource/jetbrains-mono/500.css";
 import "./globals.css";
-import { SmoothScroll } from "@/components/SmoothScroll";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
@@ -53,7 +52,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#121412",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
 };
@@ -79,12 +78,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <LanguageProvider>
-          <SmoothScroll>
-            <Header />
-            <div className="flex-1">{children}</div>
-            <Footer />
-            <FloatingWhatsApp />
-          </SmoothScroll>
+          <Header />
+          <div className="flex-1">{children}</div>
+          <Footer />
+          <FloatingWhatsApp />
         </LanguageProvider>
       </body>
     </html>

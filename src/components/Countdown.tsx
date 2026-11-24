@@ -79,9 +79,9 @@ export function Countdown({ target }: { target: string }) {
       {units.map(({ key, label }) => (
         <div
           key={key}
-          className="rounded-3xl border border-line-inverse bg-white/[0.03] px-4 py-6 text-center backdrop-blur sm:py-8"
+          className="rounded-3xl border border-line-inverse bg-white/80 px-4 py-6 text-center backdrop-blur sm:py-8"
         >
-          <div className="font-mono text-4xl font-medium tracking-tight text-accent sm:text-5xl md:text-6xl">
+          <div className="font-mono text-4xl font-medium tracking-tight text-accent-text sm:text-5xl md:text-6xl">
             {key === "days" ? display[key] : pad(display[key])}
           </div>
           <div className="mt-2 font-display text-xs font-semibold uppercase tracking-[0.2em] text-fg-inverse-muted sm:text-sm">

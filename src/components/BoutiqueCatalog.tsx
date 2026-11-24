@@ -26,9 +26,9 @@ export function BoutiqueCatalog() {
           <article key={p.id} className="group flex flex-col rounded-[1.75rem] border border-line bg-bg-elev p-6 transition hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_60px_-20px_rgba(23,24,22,0.12)]">
             <div className="flex items-start justify-between gap-3">
               <span className="rounded-full bg-bg px-3 py-1 text-xs font-medium text-fg-muted">{p.category}</span>
-              {p.badge && <span className="rounded-full bg-accent/15 px-3 py-1 text-xs font-semibold text-accent-strong">{p.badge}</span>}
+              {p.badge && <span className="rounded-full bg-accent/15 px-3 py-1 text-xs font-semibold text-accent-text">{p.badge}</span>}
             </div>
-            <div className="mt-6 flex size-14 items-center justify-center rounded-2xl bg-bg-inverse text-accent">
+            <div className="mt-6 flex size-14 items-center justify-center rounded-2xl bg-accent/15 text-accent-text">
               <ShoppingBag className="size-6" />
             </div>
             <h3 className="mt-5 font-display text-xl font-bold tracking-tight text-fg">{p.name}</h3>
@@ -36,7 +36,7 @@ export function BoutiqueCatalog() {
             <ul className="mt-4 space-y-2">
               {p.details.map((d) => (
                 <li key={d} className="flex items-start gap-2 text-xs text-fg-muted">
-                  <Check className="mt-0.5 size-3.5 shrink-0 text-accent-strong" />
+                  <Check className="mt-0.5 size-3.5 shrink-0 text-accent-text" />
                   <span>{d}</span>
                 </li>
               ))}
@@ -147,7 +147,7 @@ function CheckoutModal({ product, onClose }: { product: Product; onClose: () => 
             </div>
 
             <div className="flex items-start gap-2 text-xs text-fg-muted">
-              <ShieldCheck className="mt-0.5 size-4 shrink-0 text-accent-strong" />
+              <ShieldCheck className="mt-0.5 size-4 shrink-0 text-accent-text" />
               <p>Après confirmation, notre équipe vous envoie la procédure/lien de paiement sécurisé ({paymentLabel}) et confirme la disponibilité.</p>
             </div>
 
@@ -161,7 +161,7 @@ function CheckoutModal({ product, onClose }: { product: Product; onClose: () => 
           </form>
         ) : (
           <div className="p-6 sm:p-8 text-center">
-            <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-accent/15 text-accent-strong">
+            <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-accent/15 text-accent-text">
               <Check className="size-7" />
             </div>
             <h3 className="mt-5 font-display text-2xl font-bold tracking-tight">Commande prête à finaliser</h3>
@@ -181,7 +181,7 @@ function CheckoutModal({ product, onClose }: { product: Product; onClose: () => 
               href={SITE.whatsappLink(whatsappMsg)}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[#20bd5a]"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-6 py-4 text-sm font-semibold text-[#123b20] transition hover:bg-[#20bd5a]"
             >
               <WhatsAppIcon className="size-4" />
               Finaliser sur WhatsApp

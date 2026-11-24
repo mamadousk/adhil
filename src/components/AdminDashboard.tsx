@@ -116,7 +116,7 @@ export function AdminDashboard({ initialRecords }: { initialRecords: TrackingRec
           <p className="mt-4 rounded-xl bg-danger/[0.08] px-4 py-3 text-sm text-danger">{createState.error}</p>
         )}
         {createState && createState.ok && (
-          <p className="mt-4 rounded-xl bg-accent/10 px-4 py-3 text-sm text-accent-strong">
+          <p className="mt-4 rounded-xl bg-accent/10 px-4 py-3 text-sm text-accent-text">
             Code {createState.record.code} créé avec le statut « {createState.record.status} ».
           </p>
         )}
@@ -203,7 +203,7 @@ function RecordRow({ record }: { record: TrackingRecord }) {
           {pending ? "..." : "Enregistrer"}
         </button>
       </div>
-      {msg && <p className="mt-3 text-xs text-accent-strong">{msg}</p>}
+      {msg && <p className="mt-3 text-xs text-accent-text">{msg}</p>}
       {err && <p className="mt-3 text-xs text-danger">{err}</p>}
     </div>
   );

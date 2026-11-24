@@ -24,7 +24,7 @@ export function BoutiqueContent() {
             {t("boutique.badge")}
           </div>
           <h1 className="mt-8 font-display text-5xl font-extrabold leading-[0.95] tracking-tight text-balance sm:text-6xl md:text-7xl">
-            {t("boutique.title1")} <span className="text-accent">{t("boutique.title2")}</span>
+            {t("boutique.title1")} <span className="text-accent-text">{t("boutique.title2")}</span>
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-fg-inverse-muted sm:text-lg">
             {t("boutique.desc")} <span className="font-semibold text-fg-inverse">{t("boutique.date")}</span>.
@@ -32,9 +32,9 @@ export function BoutiqueContent() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <span className="text-sm text-fg-inverse-muted">{t("boutique.payments")}</span>
             <div className="flex items-center gap-2">
-              <div className="rounded-xl border border-line-inverse bg-white/[0.04] p-2"><MobileMoneyIcon className="h-8 w-auto" /></div>
-              <div className="rounded-xl border border-line-inverse bg-white/[0.04] p-2"><VisaIcon className="h-8 w-auto" /></div>
-              <div className="rounded-xl border border-line-inverse bg-white/[0.04] p-2"><MastercardIcon className="h-8 w-auto" /></div>
+              <div className="rounded-xl border border-line-inverse bg-white/80 p-2"><MobileMoneyIcon className="h-8 w-auto" /></div>
+              <div className="rounded-xl border border-line-inverse bg-white/80 p-2"><VisaIcon className="h-8 w-auto" /></div>
+              <div className="rounded-xl border border-line-inverse bg-white/80 p-2"><MastercardIcon className="h-8 w-auto" /></div>
             </div>
           </div>
         </div>
@@ -45,13 +45,13 @@ export function BoutiqueContent() {
 
         <div className="mt-20">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="font-mono text-xs font-medium tracking-[0.25em] text-accent uppercase">{t("boutique.featKicker")}</p>
+            <p className="font-mono text-xs font-medium tracking-[0.25em] text-accent-text uppercase">{t("boutique.featKicker")}</p>
             <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">{t("boutique.featTitle")}</h2>
           </div>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {featIcons.map((Icon, i) => (
-              <div key={i} className="rounded-3xl border border-line-inverse bg-white/[0.02] p-6 transition hover:bg-white/[0.04]">
-                <div className="flex size-11 items-center justify-center rounded-2xl bg-accent/15 text-accent"><Icon className="size-5" /></div>
+              <div key={i} className="rounded-3xl border border-line-inverse bg-white/80 p-6 transition hover:bg-white">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-accent/15 text-accent-text"><Icon className="size-5" /></div>
                 <h3 className="mt-5 font-display text-lg font-bold tracking-tight">{t(`boutique.f${i + 1}.title`)}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-fg-inverse-muted">{t(`boutique.f${i + 1}.desc`)}</p>
               </div>
@@ -64,7 +64,7 @@ export function BoutiqueContent() {
             <WhatsAppIcon className="size-4" />
             {t("boutique.notify")}
           </a>
-          <a href={SITE.whatsappLink("Bonjour Adhilix, je souhaite passer une commande.")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-line-inverse px-7 py-4 text-sm font-semibold text-fg-inverse transition hover:bg-white/5">
+          <a href={SITE.whatsappLink("Bonjour Adhilix, je souhaite passer une commande.")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-line-inverse px-7 py-4 text-sm font-semibold text-fg-inverse transition hover:bg-accent/10">
             {t("boutique.order")}
           </a>
         </div>

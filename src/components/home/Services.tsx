@@ -34,7 +34,7 @@ export function Services() {
               <Reveal key={i} delay={i * 0.08}>
                 <article className="group relative flex h-full flex-col rounded-[1.75rem] border border-line bg-bg-elev p-7 transition duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_20px_60px_-20px_rgba(23,24,22,0.15)] sm:p-8">
                   <div className="flex items-start justify-between gap-4">
-                    <div className="flex size-12 items-center justify-center rounded-2xl bg-bg-inverse text-accent"><Icon className="size-5" /></div>
+                    <div className="flex size-12 items-center justify-center rounded-2xl bg-accent/15 text-accent-text"><Icon className="size-5" /></div>
                     <span className="font-mono text-xs tracking-[0.2em] text-fg-muted uppercase">{t(`services.${i}.eyebrow`)}</span>
                   </div>
                   <h3 className="mt-8 font-display text-2xl font-bold tracking-tight">{t(`services.${i}.title`)}</h3>
@@ -43,7 +43,7 @@ export function Services() {
                     href={href}
                     target={href.startsWith("http") ? "_blank" : undefined}
                     rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-fg transition group-hover:text-accent-strong"
+                    className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-fg transition group-hover:text-accent-text"
                   >
                     {t(`services.${i}.cta`)}
                     <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
